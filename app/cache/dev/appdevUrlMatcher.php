@@ -119,12 +119,42 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // page
+        if (0 === strpos($pathinfo, '/page') && preg_match('#^/page/(?P<page_id>([a-zA-Z0-9_-]+))$#xs', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'UIT\\DefaultBundle\\Controller\\PageController::viewAction',)), array('_route' => 'page'));
+        }
+
+        // page_edit
+        if (0 === strpos($pathinfo, '/page') && preg_match('#^/page/(?P<page_id>([a-zA-Z0-9_-]+))/edit$#xs', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'UIT\\DefaultBundle\\Controller\\PageController::editAction',)), array('_route' => 'page_edit'));
+        }
+
+        // page_save
+        if (0 === strpos($pathinfo, '/page') && preg_match('#^/page/(?P<page_id>([a-zA-Z0-9_-]+))/save$#xs', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'UIT\\DefaultBundle\\Controller\\PageController::saveAction',)), array('_route' => 'page_save'));
+        }
+
+        // page_history
+        if (0 === strpos($pathinfo, '/page') && preg_match('#^/page/(?P<page_id>([a-zA-Z0-9_-]+))/history$#xs', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'UIT\\DefaultBundle\\Controller\\PageController::historyAction',)), array('_route' => 'page_history'));
+        }
+
+        // page_history_view
+        if (0 === strpos($pathinfo, '/page') && preg_match('#^/page/(?P<page_id>([a-zA-Z0-9_-]+))/history/(?P<history_id>[^/]+?)$#xs', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'UIT\\DefaultBundle\\Controller\\PageController::historyviewAction',)), array('_route' => 'page_history_view'));
+        }
+
         // index
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {
                 return $this->redirect($pathinfo.'/', 'index');
             }
             return array (  '_controller' => 'UIT\\DefaultBundle\\Controller\\DefaultController::indexAction',  '_route' => 'index',);
+        }
+
+        // search
+        if (0 === strpos($pathinfo, '/search') && preg_match('#^/search(?:/(?P<query>[^/]+?))?$#xs', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  'query' => '',  '_controller' => 'UIT\\DefaultBundle\\Controller\\DefaultController::searchAction',)), array('_route' => 'search'));
         }
 
         // fos_user_security_login

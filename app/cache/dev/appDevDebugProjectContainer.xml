@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
-    <parameter key="kernel.root_dir">/home/www/24hinfo/app</parameter>
+    <parameter key="kernel.root_dir">/home/samuel/git/24hinfo-web/app</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">app</parameter>
     <parameter key="kernel.cache_dir">/home/samuel/git/24hinfo-web/app/cache/dev</parameter>
-    <parameter key="kernel.logs_dir">/home/www/24hinfo/app/logs</parameter>
+    <parameter key="kernel.logs_dir">/home/samuel/git/24hinfo-web/app/logs</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
       <parameter key="SecurityBundle">Symfony\Bundle\SecurityBundle\SecurityBundle</parameter>
@@ -36,7 +36,7 @@
     <parameter key="mailer_host">localhost</parameter>
     <parameter key="mailer_user"></parameter>
     <parameter key="mailer_password"></parameter>
-    <parameter key="locale">en</parameter>
+    <parameter key="locale">fr</parameter>
     <parameter key="secret">ThisTokenIsSoSecretNotChangeIt</parameter>
     <parameter key="router_listener.class">Symfony\Bundle\FrameworkBundle\EventListener\RouterListener</parameter>
     <parameter key="controller_resolver.class">Symfony\Bundle\FrameworkBundle\Controller\ControllerResolver</parameter>
@@ -61,7 +61,7 @@
     <parameter key="session.storage.native.class">Symfony\Component\HttpFoundation\SessionStorage\NativeSessionStorage</parameter>
     <parameter key="session.storage.filesystem.class">Symfony\Component\HttpFoundation\SessionStorage\FilesystemSessionStorage</parameter>
     <parameter key="session_listener.class">Symfony\Bundle\FrameworkBundle\EventListener\SessionListener</parameter>
-    <parameter key="session.default_locale">en</parameter>
+    <parameter key="session.default_locale">fr</parameter>
     <parameter key="session.storage.options" type="collection"/>
     <parameter key="form.extension.class">Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension</parameter>
     <parameter key="form.factory.class">Symfony\Component\Form\FormFactory</parameter>
@@ -80,8 +80,8 @@
     <parameter key="validator.mapping.loader.yaml_files_loader.class">Symfony\Component\Validator\Mapping\Loader\YamlFilesLoader</parameter>
     <parameter key="validator.validator_factory.class">Symfony\Bundle\FrameworkBundle\Validator\ConstraintValidatorFactory</parameter>
     <parameter key="validator.mapping.loader.xml_files_loader.mapping_files" type="collection">
-      <parameter>/home/www/24hinfo/vendor/symfony/src/Symfony/Component/Form/Resources/config/validation.xml</parameter>
-      <parameter>/home/www/24hinfo/vendor/bundles/FOS/UserBundle/Resources/config/validation.xml</parameter>
+      <parameter>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Component/Form/Resources/config/validation.xml</parameter>
+      <parameter>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/config/validation.xml</parameter>
     </parameter>
     <parameter key="validator.mapping.loader.yaml_files_loader.mapping_files" type="collection"/>
     <parameter key="profiler.class">Symfony\Component\HttpKernel\Profiler\Profiler</parameter>
@@ -114,7 +114,7 @@
     <parameter key="router.cache_warmer.class">Symfony\Bundle\FrameworkBundle\CacheWarmer\RouterCacheWarmer</parameter>
     <parameter key="router.options.matcher.cache_class">appdevUrlMatcher</parameter>
     <parameter key="router.options.generator.cache_class">appdevUrlGenerator</parameter>
-    <parameter key="router.resource">/home/www/24hinfo/app/config/routing_dev.yml</parameter>
+    <parameter key="router.resource">/home/samuel/git/24hinfo-web/app/config/routing_dev.yml</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
     <parameter key="templating.engine.delegating.class">Symfony\Bundle\FrameworkBundle\Templating\DelegatingEngine</parameter>
@@ -335,8 +335,8 @@
     <parameter key="assetic.debug">true</parameter>
     <parameter key="assetic.use_controller">true</parameter>
     <parameter key="assetic.enable_profiler">false</parameter>
-    <parameter key="assetic.read_from">/home/www/24hinfo/app/../web</parameter>
-    <parameter key="assetic.write_to">/home/www/24hinfo/app/../web</parameter>
+    <parameter key="assetic.read_from">/home/samuel/git/24hinfo-web/app/../web</parameter>
+    <parameter key="assetic.write_to">/home/samuel/git/24hinfo-web/app/../web</parameter>
     <parameter key="assetic.java.bin">/usr/bin/java</parameter>
     <parameter key="assetic.node.bin">/usr/bin/node</parameter>
     <parameter key="assetic.sass.bin">/usr/bin/sass</parameter>
@@ -667,7 +667,7 @@
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.name_parser"/>
-                <argument>/home/www/24hinfo/app/Resources</argument>
+                <argument>/home/samuel/git/24hinfo-web/app/Resources</argument>
               </service>
             </argument>
             <argument type="service" id="templating.locator"/>
@@ -693,7 +693,7 @@
               <service class="Symfony\Bundle\FrameworkBundle\CacheWarmer\TemplateFinder" public="false">
                 <argument type="service" id="kernel"/>
                 <argument type="service" id="templating.name_parser"/>
-                <argument>/home/www/24hinfo/app/Resources</argument>
+                <argument>/home/samuel/git/24hinfo-web/app/Resources</argument>
               </service>
             </argument>
           </service>
@@ -712,11 +712,13 @@
     <service id="filesystem" class="Symfony\Component\Filesystem\Filesystem"/>
     <service id="file_locator" class="Symfony\Component\HttpKernel\Config\FileLocator">
       <argument type="service" id="kernel"/>
-      <argument>/home/www/24hinfo/app/Resources</argument>
+      <argument>/home/samuel/git/24hinfo-web/app/Resources</argument>
     </service>
     <service id="translator.default" class="Symfony\Bundle\FrameworkBundle\Translation\Translator">
       <argument type="service" id="service_container"/>
-      <argument type="service" id="translator.selector"/>
+      <argument type="service">
+        <service class="Symfony\Component\Translation\MessageSelector" public="false"/>
+      </argument>
       <argument type="collection">
         <argument key="translation.loader.php">php</argument>
         <argument key="translation.loader.yml">yml</argument>
@@ -727,11 +729,430 @@
         <argument key="debug">true</argument>
       </argument>
       <argument type="service" id="session"/>
+      <call method="setFallbackLocale">
+        <argument>en</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.ua.xliff</argument>
+        <argument>ua</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.it.xliff</argument>
+        <argument>it</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.ro.xliff</argument>
+        <argument>ro</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.hu.xliff</argument>
+        <argument>hu</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.cs.xliff</argument>
+        <argument>cs</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.sk.xliff</argument>
+        <argument>sk</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.zh_CN.xliff</argument>
+        <argument>zh_CN</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.pt_BR.xliff</argument>
+        <argument>pt_BR</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.pl.xliff</argument>
+        <argument>pl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.ca.xliff</argument>
+        <argument>ca</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.nl.xliff</argument>
+        <argument>nl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.da.xliff</argument>
+        <argument>da</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.lt.xliff</argument>
+        <argument>lt</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.sr.xliff</argument>
+        <argument>sr</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.es.xliff</argument>
+        <argument>es</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.fi.xliff</argument>
+        <argument>fi</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.hy.xliff</argument>
+        <argument>hy</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.de.xliff</argument>
+        <argument>de</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.lb.xliff</argument>
+        <argument>lb</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.sv.xliff</argument>
+        <argument>sv</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.eu.xliff</argument>
+        <argument>eu</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.fa.xliff</argument>
+        <argument>fa</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.pt_PT.xliff</argument>
+        <argument>pt_PT</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.ja.xliff</argument>
+        <argument>ja</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.he.xliff</argument>
+        <argument>he</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.mn.xliff</argument>
+        <argument>mn</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.et.xliff</argument>
+        <argument>et</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.fr.xliff</argument>
+        <argument>fr</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.ru.xliff</argument>
+        <argument>ru</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.id.xliff</argument>
+        <argument>id</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/translations/validators.sl.xliff</argument>
+        <argument>sl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/validators.sk.yml</argument>
+        <argument>sk</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/validators.en.yml</argument>
+        <argument>en</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.sl.yml</argument>
+        <argument>sl</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.hr.yml</argument>
+        <argument>hr</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.fr.yml</argument>
+        <argument>fr</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.ru.yml</argument>
+        <argument>ru</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/validators.hr.yml</argument>
+        <argument>hr</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.da.yml</argument>
+        <argument>da</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.et.yml</argument>
+        <argument>et</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.ja.yml</argument>
+        <argument>ja</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/validators.pt_BR.yml</argument>
+        <argument>pt_BR</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.it.yml</argument>
+        <argument>it</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.pt_PT.yml</argument>
+        <argument>pt_PT</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.bg.yml</argument>
+        <argument>bg</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/validators.fr.yml</argument>
+        <argument>fr</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/validators.nl.yml</argument>
+        <argument>nl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.pt_BR.yml</argument>
+        <argument>pt_BR</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/validators.pl.yml</argument>
+        <argument>pl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/validators.de.yml</argument>
+        <argument>de</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.pl.yml</argument>
+        <argument>pl</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.cs.yml</argument>
+        <argument>cs</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/validators.sl.yml</argument>
+        <argument>sl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.nl.yml</argument>
+        <argument>nl</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/validators.it.yml</argument>
+        <argument>it</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.ca.yml</argument>
+        <argument>ca</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.sv.yml</argument>
+        <argument>sv</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.lb.yml</argument>
+        <argument>lb</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.es.yml</argument>
+        <argument>es</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/validators.es.yml</argument>
+        <argument>es</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/validators.bg.yml</argument>
+        <argument>bg</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.en.yml</argument>
+        <argument>en</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/validators.ru.yml</argument>
+        <argument>ru</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.sk.yml</argument>
+        <argument>sk</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.de.yml</argument>
+        <argument>de</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.ro.yml</argument>
+        <argument>ro</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/FOSUserBundle.hu.yml</argument>
+        <argument>hu</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/translations/validators.ja.yml</argument>
+        <argument>ja</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/src/UIT/DefaultBundle/Resources/translations/messages.fr.xliff</argument>
+        <argument>fr</argument>
+        <argument>messages</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>/home/samuel/git/24hinfo-web/src/UIT/UserBundle/Resources/translations/messages.fr.xliff</argument>
+        <argument>fr</argument>
+        <argument>messages</argument>
+      </call>
     </service>
-    <service id="translator" class="Symfony\Component\Translation\IdentityTranslator">
-      <argument type="service" id="translator.selector"/>
-    </service>
-    <service id="translator.selector" class="Symfony\Component\Translation\MessageSelector" public="false"/>
     <service id="translation.loader.php" class="Symfony\Component\Translation\Loader\PhpFileLoader">
       <tag name="translation.loader" alias="php"/>
     </service>
@@ -743,7 +1164,7 @@
     </service>
     <service id="session" class="Symfony\Component\HttpFoundation\Session">
       <argument type="service" id="session.storage"/>
-      <argument>en</argument>
+      <argument>fr</argument>
     </service>
     <service id="session_listener" class="Symfony\Bundle\FrameworkBundle\EventListener\SessionListener">
       <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest" priority="128"/>
@@ -941,8 +1362,8 @@
             <argument type="service">
               <service class="Symfony\Component\Validator\Mapping\Loader\XmlFilesLoader" public="false">
                 <argument type="collection">
-                  <argument>/home/www/24hinfo/vendor/symfony/src/Symfony/Component/Form/Resources/config/validation.xml</argument>
-                  <argument>/home/www/24hinfo/vendor/bundles/FOS/UserBundle/Resources/config/validation.xml</argument>
+                  <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Component/Form/Resources/config/validation.xml</argument>
+                  <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/config/validation.xml</argument>
                 </argument>
               </service>
             </argument>
@@ -1179,12 +1600,12 @@
     <service id="templating.helper.code" class="Symfony\Bundle\FrameworkBundle\Templating\Helper\CodeHelper">
       <tag name="templating.helper" alias="code"/>
       <argument>null</argument>
-      <argument>/home/www/24hinfo/app</argument>
+      <argument>/home/samuel/git/24hinfo-web/app</argument>
       <argument>UTF-8</argument>
     </service>
     <service id="templating.helper.translator" class="Symfony\Bundle\FrameworkBundle\Templating\Helper\TranslatorHelper">
       <tag name="templating.helper" alias="translator"/>
-      <argument type="service" id="translator"/>
+      <argument type="service" id="translator.default"/>
     </service>
     <service id="templating.helper.form" class="Symfony\Bundle\FrameworkBundle\Templating\Helper\FormHelper">
       <tag name="templating.helper" alias="form"/>
@@ -1239,7 +1660,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>4f7f4780c1890</argument>
+            <argument>4f82a19fd7a89</argument>
           </service>
         </argument>
       </argument>
@@ -1420,7 +1841,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>4f7f4780c1890</argument>
+            <argument>4f82a19fd7a89</argument>
             <argument type="service" id="monolog.logger.security"/>
           </service>
         </argument>
@@ -1519,7 +1940,7 @@
         <argument type="service">
           <service class="Symfony\Bridge\Twig\Extension\TranslationExtension" public="false">
             <tag name="twig.extension"/>
-            <argument type="service" id="translator"/>
+            <argument type="service" id="translator.default"/>
           </service>
         </argument>
       </call>
@@ -1588,7 +2009,7 @@
       <argument type="service" id="templating.locator"/>
       <argument type="service" id="templating.name_parser"/>
       <call method="addPath">
-        <argument>/home/www/24hinfo/vendor/symfony/src/Symfony/Bundle/TwigBundle/DependencyInjection/../../../Bridge/Twig/Resources/views/Form</argument>
+        <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/TwigBundle/DependencyInjection/../../../Bridge/Twig/Resources/views/Form</argument>
       </call>
     </service>
     <service id="twig.exception_listener" class="Symfony\Component\HttpKernel\EventListener\ExceptionListener">
@@ -1598,7 +2019,7 @@
       <argument type="service" id="monolog.logger.request"/>
     </service>
     <service id="monolog.handler.main" class="Monolog\Handler\StreamHandler">
-      <argument>/home/www/24hinfo/app/logs/dev.log</argument>
+      <argument>/home/samuel/git/24hinfo-web/app/logs/dev.log</argument>
       <argument>100</argument>
       <argument>true</argument>
     </service>
@@ -1683,6 +2104,7 @@
           <call method="setEntityNamespaces">
             <argument type="collection">
               <argument key="FOSUserBundle">FOS\UserBundle\Entity</argument>
+              <argument key="UITDefaultBundle">UIT\DefaultBundle\Entity</argument>
               <argument key="UITUserBundle">UIT\UserBundle\Entity</argument>
             </argument>
           </call>
@@ -1690,7 +2112,7 @@
             <argument type="service">
               <service class="Doctrine\Common\Cache\ArrayCache" public="false">
                 <call method="setNamespace">
-                  <argument>sf2orm_default_58175fd991764fb77e5fdb7f88fc67cd</argument>
+                  <argument>sf2orm_default_531bda3f7d168b88bd2d34dd3704fd89</argument>
                 </call>
               </service>
             </argument>
@@ -1699,7 +2121,7 @@
             <argument type="service">
               <service class="Doctrine\Common\Cache\ArrayCache" public="false">
                 <call method="setNamespace">
-                  <argument>sf2orm_default_58175fd991764fb77e5fdb7f88fc67cd</argument>
+                  <argument>sf2orm_default_531bda3f7d168b88bd2d34dd3704fd89</argument>
                 </call>
               </service>
             </argument>
@@ -1708,7 +2130,7 @@
             <argument type="service">
               <service class="Doctrine\Common\Cache\ArrayCache" public="false">
                 <call method="setNamespace">
-                  <argument>sf2orm_default_58175fd991764fb77e5fdb7f88fc67cd</argument>
+                  <argument>sf2orm_default_531bda3f7d168b88bd2d34dd3704fd89</argument>
                 </call>
               </service>
             </argument>
@@ -1720,11 +2142,11 @@
                   <argument type="service">
                     <service class="Symfony\Bridge\Doctrine\Mapping\Driver\XmlDriver" public="false">
                       <argument type="collection">
-                        <argument>/home/www/24hinfo/vendor/bundles/FOS/UserBundle/Resources/config/doctrine</argument>
+                        <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/config/doctrine</argument>
                       </argument>
                       <call method="setNamespacePrefixes">
                         <argument type="collection">
-                          <argument key="/home/www/24hinfo/vendor/bundles/FOS/UserBundle/Resources/config/doctrine">FOS\UserBundle\Entity</argument>
+                          <argument key="/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/config/doctrine">FOS\UserBundle\Entity</argument>
                         </argument>
                       </call>
                       <call method="setGlobalBasename">
@@ -1743,7 +2165,24 @@
                         </service>
                       </argument>
                       <argument type="collection">
-                        <argument>/home/www/24hinfo/src/UIT/UserBundle/Entity</argument>
+                        <argument>/home/samuel/git/24hinfo-web/src/UIT/DefaultBundle/Entity</argument>
+                        <argument>/home/samuel/git/24hinfo-web/src/UIT/UserBundle/Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>UIT\DefaultBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service">
+                        <service class="Symfony\Bridge\Doctrine\Annotations\IndexedReader" public="false">
+                          <argument type="service" id="annotation_reader"/>
+                        </service>
+                      </argument>
+                      <argument type="collection">
+                        <argument>/home/samuel/git/24hinfo-web/src/UIT/DefaultBundle/Entity</argument>
+                        <argument>/home/samuel/git/24hinfo-web/src/UIT/UserBundle/Entity</argument>
                       </argument>
                     </service>
                   </argument>
@@ -1805,7 +2244,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>FrameworkBundle</argument>
-                  <argument>/home/www/24hinfo/app/Resources/FrameworkBundle/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/app/Resources/FrameworkBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -1813,7 +2252,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>FrameworkBundle</argument>
-                  <argument>/home/www/24hinfo/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -1832,7 +2271,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SecurityBundle</argument>
-                  <argument>/home/www/24hinfo/app/Resources/SecurityBundle/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/app/Resources/SecurityBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -1840,7 +2279,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SecurityBundle</argument>
-                  <argument>/home/www/24hinfo/vendor/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -1859,7 +2298,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>TwigBundle</argument>
-                  <argument>/home/www/24hinfo/app/Resources/TwigBundle/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/app/Resources/TwigBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -1867,7 +2306,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>TwigBundle</argument>
-                  <argument>/home/www/24hinfo/vendor/symfony/src/Symfony/Bundle/TwigBundle/Resources/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/TwigBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -1886,7 +2325,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>MonologBundle</argument>
-                  <argument>/home/www/24hinfo/app/Resources/MonologBundle/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/app/Resources/MonologBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -1894,7 +2333,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>MonologBundle</argument>
-                  <argument>/home/www/24hinfo/vendor/symfony/src/Symfony/Bundle/MonologBundle/Resources/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/MonologBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -1913,7 +2352,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SwiftmailerBundle</argument>
-                  <argument>/home/www/24hinfo/app/Resources/SwiftmailerBundle/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/app/Resources/SwiftmailerBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -1921,7 +2360,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SwiftmailerBundle</argument>
-                  <argument>/home/www/24hinfo/vendor/symfony/src/Symfony/Bundle/SwiftmailerBundle/Resources/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/SwiftmailerBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -1940,7 +2379,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>DoctrineBundle</argument>
-                  <argument>/home/www/24hinfo/app/Resources/DoctrineBundle/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/app/Resources/DoctrineBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -1948,7 +2387,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>DoctrineBundle</argument>
-                  <argument>/home/www/24hinfo/vendor/symfony/src/Symfony/Bundle/DoctrineBundle/Resources/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/DoctrineBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -1967,7 +2406,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>AsseticBundle</argument>
-                  <argument>/home/www/24hinfo/app/Resources/AsseticBundle/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/app/Resources/AsseticBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -1975,7 +2414,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>AsseticBundle</argument>
-                  <argument>/home/www/24hinfo/vendor/bundles/Symfony/Bundle/AsseticBundle/Resources/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/vendor/bundles/Symfony/Bundle/AsseticBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -1994,7 +2433,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SensioFrameworkExtraBundle</argument>
-                  <argument>/home/www/24hinfo/app/Resources/SensioFrameworkExtraBundle/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/app/Resources/SensioFrameworkExtraBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2002,7 +2441,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SensioFrameworkExtraBundle</argument>
-                  <argument>/home/www/24hinfo/vendor/bundles/Sensio/Bundle/FrameworkExtraBundle/Resources/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/vendor/bundles/Sensio/Bundle/FrameworkExtraBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2021,7 +2460,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>JMSSecurityExtraBundle</argument>
-                  <argument>/home/www/24hinfo/app/Resources/JMSSecurityExtraBundle/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/app/Resources/JMSSecurityExtraBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2029,7 +2468,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>JMSSecurityExtraBundle</argument>
-                  <argument>/home/www/24hinfo/vendor/bundles/JMS/SecurityExtraBundle/Resources/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/vendor/bundles/JMS/SecurityExtraBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2048,7 +2487,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>FOSUserBundle</argument>
-                  <argument>/home/www/24hinfo/app/Resources/FOSUserBundle/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/app/Resources/FOSUserBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2056,7 +2495,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>FOSUserBundle</argument>
-                  <argument>/home/www/24hinfo/vendor/bundles/FOS/UserBundle/Resources/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/vendor/bundles/FOS/UserBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2075,7 +2514,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>UITDefaultBundle</argument>
-                  <argument>/home/www/24hinfo/app/Resources/UITDefaultBundle/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/app/Resources/UITDefaultBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2083,7 +2522,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>UITDefaultBundle</argument>
-                  <argument>/home/www/24hinfo/src/UIT/DefaultBundle/Resources/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/src/UIT/DefaultBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2102,7 +2541,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>UITUserBundle</argument>
-                  <argument>/home/www/24hinfo/app/Resources/UITUserBundle/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/app/Resources/UITUserBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2110,7 +2549,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>UITUserBundle</argument>
-                  <argument>/home/www/24hinfo/src/UIT/UserBundle/Resources/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/src/UIT/UserBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2129,7 +2568,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>WebProfilerBundle</argument>
-                  <argument>/home/www/24hinfo/app/Resources/WebProfilerBundle/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/app/Resources/WebProfilerBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2137,7 +2576,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>WebProfilerBundle</argument>
-                  <argument>/home/www/24hinfo/vendor/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/vendor/symfony/src/Symfony/Bundle/WebProfilerBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2156,7 +2595,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SensioDistributionBundle</argument>
-                  <argument>/home/www/24hinfo/app/Resources/SensioDistributionBundle/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/app/Resources/SensioDistributionBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2164,7 +2603,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SensioDistributionBundle</argument>
-                  <argument>/home/www/24hinfo/vendor/bundles/Sensio/Bundle/DistributionBundle/Resources/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/vendor/bundles/Sensio/Bundle/DistributionBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2183,7 +2622,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SensioGeneratorBundle</argument>
-                  <argument>/home/www/24hinfo/app/Resources/SensioGeneratorBundle/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/app/Resources/SensioGeneratorBundle/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2191,7 +2630,7 @@
                 <service class="%assetic.directory_resource.class%" public="false">
                   <argument type="service" id="templating.loader"/>
                   <argument>SensioGeneratorBundle</argument>
-                  <argument>/home/www/24hinfo/vendor/bundles/Sensio/Bundle/GeneratorBundle/Resources/views</argument>
+                  <argument>/home/samuel/git/24hinfo-web/vendor/bundles/Sensio/Bundle/GeneratorBundle/Resources/views</argument>
                   <argument>/^[^.]+\.[^.]+\.twig$/</argument>
                 </service>
               </argument>
@@ -2207,7 +2646,7 @@
             <tag name="assetic.formula_resource" loader="twig"/>
             <argument type="service" id="templating.loader"/>
             <argument></argument>
-            <argument>/home/www/24hinfo/app/Resources/views</argument>
+            <argument>/home/samuel/git/24hinfo-web/app/Resources/views</argument>
             <argument>/^[^.]+\.[^.]+\.twig$/</argument>
           </service>
         </argument>
@@ -2224,7 +2663,7 @@
           </argument>
         </service>
       </argument>
-      <argument>/home/www/24hinfo/app/../web</argument>
+      <argument>/home/samuel/git/24hinfo-web/app/../web</argument>
       <argument>true</argument>
       <call method="addWorker">
         <argument type="service">
@@ -2393,7 +2832,7 @@
       <argument>2</argument>
     </service>
     <service id="sensio.distribution.webconfigurator" class="Sensio\Bundle\DistributionBundle\Configurator\Configurator">
-      <argument>/home/www/24hinfo/app</argument>
+      <argument>/home/samuel/git/24hinfo-web/app</argument>
     </service>
     <service id="monolog.logger.request" class="Symfony\Bridge\Monolog\Logger">
       <argument>request</argument>
@@ -2488,7 +2927,7 @@
     </service>
     <service id="router" class="Symfony\Bundle\FrameworkBundle\Routing\Router">
       <argument type="service" id="service_container"/>
-      <argument>/home/www/24hinfo/app/config/routing_dev.yml</argument>
+      <argument>/home/samuel/git/24hinfo-web/app/config/routing_dev.yml</argument>
       <argument type="collection">
         <argument key="cache_dir">/home/samuel/git/24hinfo-web/app/cache/dev</argument>
         <argument key="debug">true</argument>
@@ -2641,6 +3080,7 @@
       <argument type="service" id="fos_user.user_manager"/>
     </service>
     <service id="debug.event_dispatcher" alias="event_dispatcher"/>
+    <service id="translator" alias="translator.default"/>
     <service id="database_connection" alias="doctrine.dbal.default_connection"/>
     <service id="doctrine.orm.entity_manager" alias="doctrine.orm.default_entity_manager"/>
     <service id="fos_user.util.username_canonicalizer" alias="fos_user.util.email_canonicalizer"/>

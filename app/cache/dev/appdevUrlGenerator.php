@@ -30,7 +30,13 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_configurator_home' => true,
        '_configurator_step' => true,
        '_configurator_final' => true,
+       'page' => true,
+       'page_edit' => true,
+       'page_save' => true,
+       'page_history' => true,
+       'page_history_view' => true,
        'index' => true,
+       'search' => true,
        'fos_user_security_login' => true,
        'fos_user_security_check' => true,
        'fos_user_security_logout' => true,
@@ -153,9 +159,39 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         return array(array (), array (  '_controller' => 'Sensio\\Bundle\\DistributionBundle\\Controller\\ConfiguratorController::finalAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/_configurator/final',  ),));
     }
 
+    private function getpageRouteInfo()
+    {
+        return array(array (  0 => 'page_id',), array (  '_controller' => 'UIT\\DefaultBundle\\Controller\\PageController::viewAction',), array (  'page_id' => '([a-zA-Z0-9_-]+)',), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '([a-zA-Z0-9_-]+)',    3 => 'page_id',  ),  1 =>   array (    0 => 'text',    1 => '/page',  ),));
+    }
+
+    private function getpage_editRouteInfo()
+    {
+        return array(array (  0 => 'page_id',), array (  '_controller' => 'UIT\\DefaultBundle\\Controller\\PageController::editAction',), array (  'page_id' => '([a-zA-Z0-9_-]+)',), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '([a-zA-Z0-9_-]+)',    3 => 'page_id',  ),  2 =>   array (    0 => 'text',    1 => '/page',  ),));
+    }
+
+    private function getpage_saveRouteInfo()
+    {
+        return array(array (  0 => 'page_id',), array (  '_controller' => 'UIT\\DefaultBundle\\Controller\\PageController::saveAction',), array (  'page_id' => '([a-zA-Z0-9_-]+)',), array (  0 =>   array (    0 => 'text',    1 => '/save',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '([a-zA-Z0-9_-]+)',    3 => 'page_id',  ),  2 =>   array (    0 => 'text',    1 => '/page',  ),));
+    }
+
+    private function getpage_historyRouteInfo()
+    {
+        return array(array (  0 => 'page_id',), array (  '_controller' => 'UIT\\DefaultBundle\\Controller\\PageController::historyAction',), array (  'page_id' => '([a-zA-Z0-9_-]+)',), array (  0 =>   array (    0 => 'text',    1 => '/history',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '([a-zA-Z0-9_-]+)',    3 => 'page_id',  ),  2 =>   array (    0 => 'text',    1 => '/page',  ),));
+    }
+
+    private function getpage_history_viewRouteInfo()
+    {
+        return array(array (  0 => 'page_id',  1 => 'history_id',), array (  '_controller' => 'UIT\\DefaultBundle\\Controller\\PageController::historyviewAction',), array (  'page_id' => '([a-zA-Z0-9_-]+)',), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'history_id',  ),  1 =>   array (    0 => 'text',    1 => '/history',  ),  2 =>   array (    0 => 'variable',    1 => '/',    2 => '([a-zA-Z0-9_-]+)',    3 => 'page_id',  ),  3 =>   array (    0 => 'text',    1 => '/page',  ),));
+    }
+
     private function getindexRouteInfo()
     {
         return array(array (), array (  '_controller' => 'UIT\\DefaultBundle\\Controller\\DefaultController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),));
+    }
+
+    private function getsearchRouteInfo()
+    {
+        return array(array (  0 => 'query',), array (  'query' => '',  '_controller' => 'UIT\\DefaultBundle\\Controller\\DefaultController::searchAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'query',  ),  1 =>   array (    0 => 'text',    1 => '/search',  ),));
     }
 
     private function getfos_user_security_loginRouteInfo()

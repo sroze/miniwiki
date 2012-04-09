@@ -1,0 +1,37 @@
+@CHARSET "UTF-8";
+div.content {
+	margin-top: 50px;
+}
+div.left-menu {
+	width: 220px;
+	float: left;
+}
+div.right-content {
+	width: 700px;
+	padding-left: 20px;
+	float: left;
+}
+div.content table, div.content form {
+	margin-top: 20px;
+}
+input {
+	margin-bottom: 0px !important;
+}
+a.noexists {
+	color: red;
+}
+div.right-content h1 {
+	border-bottom: 1px solid #CCCCCC;
+	margin-bottom: 10px;
+}
+div.right-content h2 {
+    border-bottom: 1px solid #CCCCCC;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 10px;
+}
+div.footer {
+	text-align: center;
+	padding-top: 20px;
+	clear: both;
+}

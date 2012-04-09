@@ -1,0 +1,11 @@
+{% extends "UITDefaultBundle::layout.html.twig" %}
+{% block body %}
+    {% for key, message in app.session.getFlashes() %}
+    <div class="{{ key }}">
+        {{ message|trans({}, 'FOSUserBundle') }}
+    </div>
+    {% endfor %}
+    
+    {% block fos_user_content %}
+    {% endblock fos_user_content %}
+{% endblock %}

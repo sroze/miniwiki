@@ -1,0 +1,35 @@
+{% extends "UITDefaultBundle::layout.html.twig" %}
+{% block body %}
+    <h1>Résultat de votre recherche</h1>
+    {% if pages is not null %}
+    <p><strong>Recherché:</strong> &laquo; {{ query }} &raquo;. Vous pouvez créer la page <a href="{{ path('page_edit', {page_id: query}) }}" class="noexists">{{ query }}</a>.</p>
+    {% if pages|length > 0 %}
+	<table class="table table-bordered table-striped">
+	    <thead>
+		    <tr>
+			    <th>Nom de la page</th>
+			    <th>Aperçu</th>
+		    </tr>
+	    </thead>
+	    <tbody>
+		{% for page in pages %}
+		    <tr>
+			    <td><a href="{{ path('page', {page_id: page.pageId}) }}">{{ page.pageId }}</a></td>
+			    <td>
+			    	{{ page.getOverview() }}
+			    </td>
+		    </tr>
+		{% endfor %}
+	    </tbody>
+	</table>
+	{% else %}
+	<div class="alert alert-info">
+    	Il n'y a aucun résultat.
+    </div>
+	{% endif %}
+	{% else %}
+	<div class="alert alert-danger">
+    	Votre requête est vide ou invalide.
+    </div>
+	{% endif %}
+{% endblock %}

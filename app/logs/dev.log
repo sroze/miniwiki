@@ -1,0 +1,136 @@
+[2012-04-06 21:37:46] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException". [] []
+[2012-04-06 21:37:46] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ExceptionListener::onKernelException". [] []
+[2012-04-06 21:37:46] request.CRITICAL: ErrorException: Warning: class_parents() [<a href='function.class-parents'>function.class-parents</a>]: Class UIT\UserBundle\Entity\User does not exist and could not be loaded in /home/www/24hinfo/vendor/doctrine/lib/Doctrine/ORM/Mapping/ClassMetadataFactory.php line 223 (uncaught exception) at /home/www/24hinfo/vendor/symfony/src/Symfony/Component/HttpKernel/Debug/ErrorHandler.php line 65 [] []
+[2012-04-06 21:37:46] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelRequest". [] []
+[2012-04-06 21:37:46] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\RouterListener::onEarlyKernelRequest". [] []
+[2012-04-06 21:37:46] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\SessionListener::onKernelRequest". [] []
+[2012-04-06 21:37:46] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Component\Security\Http\Firewall::onKernelRequest". [] []
+[2012-04-06 21:37:46] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\RouterListener::onKernelRequest". [] []
+[2012-04-06 21:37:46] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\AsseticBundle\EventListener\RequestListener::onKernelRequest". [] []
+[2012-04-06 21:37:46] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException". [] []
+[2012-04-06 21:37:46] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ExceptionListener::onKernelException". [] []
+[2012-04-06 21:37:46] request.CRITICAL: Exception thrown when handling an exception (InvalidArgumentException: The directory "/home/samuel/git/24hinfo-web/app/cache/dev/annotations" is not writable.) [] []
+[2012-04-06 21:38:46] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException". [] []
+[2012-04-06 21:38:46] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ExceptionListener::onKernelException". [] []
+[2012-04-06 21:38:46] request.CRITICAL: Doctrine\ORM\Mapping\MappingException: Class UIT\UserBundle\Entity\User is not a valid entity or mapped super class. (uncaught exception) at /home/www/24hinfo/vendor/doctrine/lib/Doctrine/ORM/Mapping/MappingException.php line 142 [] []
+[2012-04-06 21:38:46] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelRequest". [] []
+[2012-04-06 21:38:46] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\RouterListener::onEarlyKernelRequest". [] []
+[2012-04-06 21:38:46] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\SessionListener::onKernelRequest". [] []
+[2012-04-06 21:38:46] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Component\Security\Http\Firewall::onKernelRequest". [] []
+[2012-04-06 21:38:46] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\RouterListener::onKernelRequest". [] []
+[2012-04-06 21:38:46] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\AsseticBundle\EventListener\RequestListener::onKernelRequest". [] []
+[2012-04-06 21:38:46] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException". [] []
+[2012-04-06 21:38:46] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ExceptionListener::onKernelException". [] []
+[2012-04-06 21:38:46] request.CRITICAL: Exception thrown when handling an exception (InvalidArgumentException: The directory "/home/samuel/git/24hinfo-web/app/cache/dev/annotations" is not writable.) [] []
+[2012-04-06 21:39:02] doctrine.DEBUG: SELECT
+                    c.relname, n.nspname AS schemaname
+                FROM
+                   pg_class c, pg_namespace n
+                WHERE relkind = 'S' AND n.oid = c.relnamespace AND 
+                    (n.nspname NOT LIKE 'pg_%' AND n.nspname != 'information_schema') ([]) [] []
+[2012-04-06 21:39:02] doctrine.DEBUG: SELECT tablename AS table_name, schemaname AS schema_name
+                FROM pg_tables WHERE schemaname NOT LIKE 'pg_%' AND schemaname != 'information_schema' ([]) [] []
+[2012-04-06 21:39:50] doctrine.DEBUG: SELECT
+                    c.relname, n.nspname AS schemaname
+                FROM
+                   pg_class c, pg_namespace n
+                WHERE relkind = 'S' AND n.oid = c.relnamespace AND 
+                    (n.nspname NOT LIKE 'pg_%' AND n.nspname != 'information_schema') ([]) [] []
+[2012-04-06 21:39:50] doctrine.DEBUG: SELECT tablename AS table_name, schemaname AS schema_name
+                FROM pg_tables WHERE schemaname NOT LIKE 'pg_%' AND schemaname != 'information_schema' ([]) [] []
+[2012-04-06 21:40:08] doctrine.DEBUG: SELECT
+                    c.relname, n.nspname AS schemaname
+                FROM
+                   pg_class c, pg_namespace n
+                WHERE relkind = 'S' AND n.oid = c.relnamespace AND 
+                    (n.nspname NOT LIKE 'pg_%' AND n.nspname != 'information_schema') ([]) [] []
+[2012-04-06 21:40:08] doctrine.DEBUG: SELECT tablename AS table_name, schemaname AS schema_name
+                FROM pg_tables WHERE schemaname NOT LIKE 'pg_%' AND schemaname != 'information_schema' ([]) [] []
+[2012-04-06 21:40:29] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException". [] []
+[2012-04-06 21:40:29] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ExceptionListener::onKernelException". [] []
+[2012-04-06 21:40:29] request.CRITICAL: Doctrine\ORM\Mapping\MappingException: Class UIT\UserBundle\Entity\User is not a valid entity or mapped super class. (uncaught exception) at /home/www/24hinfo/vendor/doctrine/lib/Doctrine/ORM/Mapping/MappingException.php line 142 [] []
+[2012-04-06 21:40:29] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelRequest". [] []
+[2012-04-06 21:40:29] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\RouterListener::onEarlyKernelRequest". [] []
+[2012-04-06 21:40:29] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\SessionListener::onKernelRequest". [] []
+[2012-04-06 21:40:29] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Component\Security\Http\Firewall::onKernelRequest". [] []
+[2012-04-06 21:40:29] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\RouterListener::onKernelRequest". [] []
+[2012-04-06 21:40:29] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\AsseticBundle\EventListener\RequestListener::onKernelRequest". [] []
+[2012-04-06 21:40:29] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException". [] []
+[2012-04-06 21:40:29] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ExceptionListener::onKernelException". [] []
+[2012-04-06 21:40:29] request.CRITICAL: Exception thrown when handling an exception (InvalidArgumentException: The directory "/home/samuel/git/24hinfo-web/app/cache/dev/annotations" is not writable.) [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ExceptionListener::onKernelException". [] []
+[2012-04-06 21:40:30] request.CRITICAL: Doctrine\ORM\Mapping\MappingException: Class UIT\UserBundle\Entity\User is not a valid entity or mapped super class. (uncaught exception) at /home/www/24hinfo/vendor/doctrine/lib/Doctrine/ORM/Mapping/MappingException.php line 142 [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\RouterListener::onEarlyKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\SessionListener::onKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Component\Security\Http\Firewall::onKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\RouterListener::onKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\AsseticBundle\EventListener\RequestListener::onKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ExceptionListener::onKernelException". [] []
+[2012-04-06 21:40:30] request.CRITICAL: Exception thrown when handling an exception (InvalidArgumentException: The directory "/home/samuel/git/24hinfo-web/app/cache/dev/annotations" is not writable.) [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ExceptionListener::onKernelException". [] []
+[2012-04-06 21:40:30] request.CRITICAL: Doctrine\ORM\Mapping\MappingException: Class UIT\UserBundle\Entity\User is not a valid entity or mapped super class. (uncaught exception) at /home/www/24hinfo/vendor/doctrine/lib/Doctrine/ORM/Mapping/MappingException.php line 142 [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\RouterListener::onEarlyKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\SessionListener::onKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Component\Security\Http\Firewall::onKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\RouterListener::onKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\AsseticBundle\EventListener\RequestListener::onKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ExceptionListener::onKernelException". [] []
+[2012-04-06 21:40:30] request.CRITICAL: Exception thrown when handling an exception (InvalidArgumentException: The directory "/home/samuel/git/24hinfo-web/app/cache/dev/annotations" is not writable.) [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ExceptionListener::onKernelException". [] []
+[2012-04-06 21:40:30] request.CRITICAL: Doctrine\ORM\Mapping\MappingException: Class UIT\UserBundle\Entity\User is not a valid entity or mapped super class. (uncaught exception) at /home/www/24hinfo/vendor/doctrine/lib/Doctrine/ORM/Mapping/MappingException.php line 142 [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\RouterListener::onEarlyKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\SessionListener::onKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Component\Security\Http\Firewall::onKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\FrameworkBundle\EventListener\RouterListener::onKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.request" to listener "Symfony\Bundle\AsseticBundle\EventListener\RequestListener::onKernelRequest". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ProfilerListener::onKernelException". [] []
+[2012-04-06 21:40:30] event.DEBUG: Notified event "kernel.exception" to listener "Symfony\Component\HttpKernel\EventListener\ExceptionListener::onKernelException". [] []
+[2012-04-06 21:40:30] request.CRITICAL: Exception thrown when handling an exception (InvalidArgumentException: The directory "/home/samuel/git/24hinfo-web/app/cache/dev/annotations" is not writable.) [] []
+[2012-04-06 21:41:16] doctrine.DEBUG: SELECT
+                    c.relname, n.nspname AS schemaname
+                FROM
+                   pg_class c, pg_namespace n
+                WHERE relkind = 'S' AND n.oid = c.relnamespace AND 
+                    (n.nspname NOT LIKE 'pg_%' AND n.nspname != 'information_schema') ([]) [] []
+[2012-04-06 21:41:16] doctrine.DEBUG: SELECT tablename AS table_name, schemaname AS schema_name
+                FROM pg_tables WHERE schemaname NOT LIKE 'pg_%' AND schemaname != 'information_schema' ([]) [] []
+[2012-04-06 21:41:18] doctrine.DEBUG: SELECT
+                    c.relname, n.nspname AS schemaname
+                FROM
+                   pg_class c, pg_namespace n
+                WHERE relkind = 'S' AND n.oid = c.relnamespace AND 
+                    (n.nspname NOT LIKE 'pg_%' AND n.nspname != 'information_schema') ([]) [] []
+[2012-04-06 21:41:18] doctrine.DEBUG: SELECT tablename AS table_name, schemaname AS schema_name
+                FROM pg_tables WHERE schemaname NOT LIKE 'pg_%' AND schemaname != 'information_schema' ([]) [] []
+[2012-04-06 21:41:23] doctrine.DEBUG: SELECT
+                    c.relname, n.nspname AS schemaname
+                FROM
+                   pg_class c, pg_namespace n
+                WHERE relkind = 'S' AND n.oid = c.relnamespace AND 
+                    (n.nspname NOT LIKE 'pg_%' AND n.nspname != 'information_schema') ([]) [] []
+[2012-04-06 21:41:23] doctrine.DEBUG: SELECT tablename AS table_name, schemaname AS schema_name
+                FROM pg_tables WHERE schemaname NOT LIKE 'pg_%' AND schemaname != 'information_schema' ([]) [] []
+[2012-04-06 21:44:08] doctrine.DEBUG: SELECT
+                    c.relname, n.nspname AS schemaname
+                FROM
+                   pg_class c, pg_namespace n
+                WHERE relkind = 'S' AND n.oid = c.relnamespace AND 
+                    (n.nspname NOT LIKE 'pg_%' AND n.nspname != 'information_schema') ([]) [] []
+[2012-04-06 21:44:08] doctrine.DEBUG: SELECT tablename AS table_name, schemaname AS schema_name
+                FROM pg_tables WHERE schemaname NOT LIKE 'pg_%' AND schemaname != 'information_schema' ([]) [] []
+[2012-04-06 21:46:04] doctrine.DEBUG: SELECT
+                    c.relname, n.nspname AS schemaname
+                FROM
+                   pg_class c, pg_namespace n
+                WHERE relkind = 'S' AND n.oid = c.relnamespace AND 
+                    (n.nspname NOT LIKE 'pg_%' AND n.nspname != 'information_schema') ([]) [] []
+[2012-04-06 21:46:04] doctrine.DEBUG: SELECT tablename AS table_name, schemaname AS schema_name
+                FROM pg_tables WHERE schemaname NOT LIKE 'pg_%' AND schemaname != 'information_schema' ([]) [] []

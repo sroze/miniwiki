@@ -1,0 +1,19 @@
+{% extends "UITDefaultBundle::layout.html.twig" %}
+{% block body %}
+<h1>Edition de &laquo; {{ page.pageId }} &raquo;</h1>
+<form class="form" action="{{ path('page_save', {page_id: page.pageId}) }}" method="post" {{ form_enctype(form) }}>
+    {{ form_errors(form) }}
+    
+	{{ form_errors(form.content) }}
+    {{ form_widget(form.content, {'attr': {'style': 'width: 100%; height: 200px;'} }) }}
+
+	{{ form_rest(form) }}
+	
+	<div class="control-group">
+		<div class="controls">
+    		<input type="submit" class="btn btn-primary" value="Save" />
+    		<a class="btn btn-danger" href="{{ path('page', {page_id: page.pageId}) }}">Cancel</a>
+	    </div>
+    </div>
+</form>
+{% endblock %}

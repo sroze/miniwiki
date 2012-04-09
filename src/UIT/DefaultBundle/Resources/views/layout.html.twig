@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Pechotes'MiniWiki{% endblock %}</title>
+        {% block stylesheets %}
+        {% stylesheets filter="cssrewrite"
+		    'bundles/uitdefault/css/bootstrap.css'
+		    'bundles/uitdefault/css/24h.css'
+		%}
+		<link rel="stylesheet" href="{{ asset_url }}" />
+		{% endstylesheets %}
+        {% endblock %}
+        {% javascripts
+		    '@UITDefaultBundle/Resources/public/js/jquery-1.7.2.min.js'
+		%}
+		<script type="text/javascript" src="{{ asset_url }}"></script>
+		{% endjavascripts %}
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+    	<!-- NAV BAR -->
+	    <div class="navbar navbar-fixed-top">
+	      <div class="navbar-inner">
+	        <div class="container">
+	          <a class="brand" href="{{ path('index') }}">MiniWiki</a>
+	          <div class="nav-collapse">
+	            <ul class="nav">
+	              {% block nav_left_links %}
+	              <li class="{% if app.request.attributes.get('_route') == 'index' %}active{% endif %}">
+	                <a href="{{ path('index') }}">Accueil</a>
+	              </li>
+	              {% endblock %}
+	            </ul>
+	            <ul class="nav pull-right">
+	              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+	              <li class="dropdown">
+	              	<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ app.user.username }} <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li class="{% if app.request.attributes.get('_route') == 'fos_user_profile_edit' %}active{% endif %}"><a href="{{ path('fos_user_profile_edit') }}">Mon compte</a></li>
+	             		<li class="divider"></li>
+						<li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
+					</ul>
+	              </li>
+	              {% else %}
+	              <li class="{% if app.request.attributes.get('_route') == 'fos_user_registration_register' %}active{% endif %}">
+	                <a href="{{ path('fos_user_registration_register') }}">Inscription</a>
+	              </li>
+	              <li class="{% if app.request.attributes.get('_route') == 'fos_user_security_login' %}active{% endif %}">
+	                <a href="{{ path('fos_user_security_login') }}">Connexion</a>
+	              </li>
+	              {% endif %}
+	            </ul>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	    <div class="content container">
+		<div class="left-menu">
+			<ul class="nav nav-list">
+				{% block menuitems %}
+			    <li class="nav-header">Recherche</li>
+			    <li class="">
+			    	<form action="{{ path('search') }}" method="POST" style="margin-top: 0;">
+				    	<div class="input-append">
+		               		<input type="text" size="16" name="query" id="appendedPrependedInput" class="span2"><button type="submit" class="btn">Go!</button>
+		            	</div>
+	            	</form>
+			    </li>
+			    {% if page is defined %}
+			    <li class="nav-header">Gestion de page</li>
+	            <li class="{% if app.request.attributes.get('_route') == 'page_history' %}active{% endif %}">
+	                <a href="{{ path('page_history', {page_id: page.pageId}) }}">Historique</a>
+	            </li>
+			    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+	            <li class="{% if app.request.attributes.get('_route') == 'page_edit' %}active{% endif %}">
+	                <a href="{{ path('page_edit', {page_id: page.pageId}) }}">Editer la page</a>
+	            </li>
+	            {% else %}
+	            <li>Vous devez être connecté pour plus de fonctionnalités.</li>
+	            {% endif %}
+	            {% endif %}
+			    {% endblock %}
+		    </ul>
+		</div>
+		<div class="right-content">
+		{% for key, flash in app.session.getFlashes() %}
+		    <div class="alert alert-{{ key }}">
+		    <a class="close" data-dismiss="alert">×</a>
+		    {{ flash|trans({}, 'FOSUserBundle') }}
+		    </div>
+		{% endfor %}
+        {% block body %}{% endblock %}
+        </div>
+        <div class="footer">
+        <hr />
+        Pechotes pour les 24h de l'info 2012</div>
+        </div>
+        {% block javascripts %}{% endblock %}
+		{% javascripts
+		    '@UITDefaultBundle/Resources/public/js/bootstrap.js'
+		%}
+		<script type="text/javascript" src="{{ asset_url }}"></script>
+		{% endjavascripts %}
+    </body>
+</html>

@@ -1,0 +1,15 @@
+{% extends "UITDefaultBundle::layout.html.twig" %}
+{% block body %}
+<h1>{{ page.pageId }}@{{ history.historyId }}<small>
+par
+{% if history.username is not null %}
+{{ history.username }}
+{% else %}
+<em>Inconnu</em>
+{% endif %} par {% if history.date is not null %}
+{{ history.date|date("d/m/Y H:i:s") }}
+{% else %}
+<em>Inconnu</em>
+{% endif %}</small></h1>
+{{ rendered|raw }}
+{% endblock %}

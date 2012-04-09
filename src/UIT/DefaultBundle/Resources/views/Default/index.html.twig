@@ -1,0 +1,8 @@
+{% extends "UITDefaultBundle::layout.html.twig" %}
+{% block body %}
+    <h1>MiniWiki</h1>
+    <ul>
+    	<li><a href="{{ path('page', {page_id: 'main'}) }}">main</a></li>
+    	<li><a href="{{ path('page', {page_id: 'seb'}) }}">seb</a></li>
+    </ul>
+{% endblock %}

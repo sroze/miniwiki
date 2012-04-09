@@ -1,0 +1,41 @@
+{% extends "UITDefaultBundle::layout.html.twig" %}
+{% block body %}
+<h1>Historique de &laquo; {{ page.pageId }} &raquo;</h1>
+{% if histories|length > 0 %}
+<table class="table table-bordered table-striped">
+    <thead>
+	    <tr>
+		    <th>Numéro d'historique</th>
+		    <th>Utilisateur</th>
+		    <th>Date</th>
+	    </tr>
+    </thead>
+    <tbody>
+	{% for history in histories %}
+	    <tr>
+		    <td><a href="{{ path('page_history_view', {page_id: page.pageId, history_id: history.historyId}) }}">{{ history.historyId }}</a></td>
+		    <td>
+		    	{% if history.username is not null %}
+		    	{{ history.username }}
+		    	{% else %}
+		    	<em>Inconnu</em>
+		    	{% endif %}
+		    </td>
+		    <td>
+		    	{% if history.date is not null %}
+		    	{{ history.date|date("d/m/Y H:i:s") }}
+		    	{% else %}
+		    	<em>Inconnu</em>
+		    	{% endif %}
+		    </td>
+	    </tr>
+	{% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-block">
+    <h4 class="alert-heading">Attention!</h4>
+    Il n'y a pas encore d'historique sur cette page.
+</div>
+{% endif %}
+{% endblock %}
